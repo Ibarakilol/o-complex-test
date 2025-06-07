@@ -1,0 +1,12 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.textError {
+  @include textCaption($color: $color-red);
+  bottom: -17px;
+  display: block;
+  line-height: 160%;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}

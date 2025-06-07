@@ -1,0 +1,35 @@
+// FONT FAMILY
+$font-main: var(--font-sans);
+
+// FONT WEIGHTS
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// COLORS
+$color-red: #d95151;
+$color-red-light: #f9919a;
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-text-body: #3b3b3b;
+$color-text-button: $color-white;
+$color-border: #56565d;
+$color-outline: $color-white;
+
+// BACKGROUNDS
+$background-body: $color-white;
+$background-button: #222222;
+
+// TRANSITION TIME
+$transition-time: 0.15s;
+
+// SHADOWS
+$shadow-focus: 0 0 0 2px $color-outline;
+
+// COMPONENTS
+$component-input-height: 40px;
+
+// BREAKPOINTS
+$tablet-width: 768px;
+$laptop-width: 1024px;
+$desktop-width: 1280px;

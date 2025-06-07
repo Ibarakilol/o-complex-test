@@ -1,0 +1,12 @@
+.mainPage {
+  display: grid;
+  grid-template-rows: 64px 1fr;
+}
+
+.mainPageContent {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  justify-content: center;
+  padding: 60px 16px 0;
+}

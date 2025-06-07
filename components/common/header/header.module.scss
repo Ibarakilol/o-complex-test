@@ -1,0 +1,32 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.header {
+  align-items: center;
+  background-color: $color-black;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 12px 32px;
+}
+
+.headerLogo {
+  @include textBody($color: $color-white, $size: 18px, $weight: $font-weight-bold);
+}
+
+.headerCartButton {
+  position: relative;
+}
+
+.headerCartButtonFilled {
+  &::after {
+    background-color: $color-red;
+    border-radius: 6px;
+    content: "";
+    height: 12px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: 12px;
+  }
+}

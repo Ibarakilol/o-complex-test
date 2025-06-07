@@ -1,0 +1,48 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.productCard {
+  display: grid;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 10px;
+  width: 300px;
+
+  @include laptop() {
+    width: 400px;
+  }
+}
+
+.productCardContent {
+  align-items: start;
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+}
+
+.productCardImage {
+  border-radius: 16px;
+}
+
+.productCardTitle {
+  @include reset-heading();
+  @include textBody($size: 18px, $weight: $font-weight-bold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productCardDescription {
+  @include reset-description();
+  @include textBody();
+}
+
+.productCardPrice {
+  @include textBody($size: 16px, $weight: $font-weight-bold);
+}
+
+.productCardActions {
+  display: grid;
+  gap: 12px;
+  grid-auto-flow: column;
+}

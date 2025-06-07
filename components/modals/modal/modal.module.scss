@@ -1,0 +1,36 @@
+@import "@/scss/animations.scss";
+@import "@/scss/variables.scss";
+
+.modal {
+  align-items: center;
+  animation: $transition-time forwards fadeIn;
+  background-color: rgba($color: $color-black, $alpha: 0.4);
+  box-sizing: border-box;
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1100;
+}
+
+.modalHiding {
+  animation: $transition-time both fadeOut;
+
+  .modalWrapper {
+    animation: $transition-time both fadeOut;
+  }
+}
+
+.modalWrapper {
+  animation: $transition-time forwards fadeIn;
+  background-color: $background-body;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba($color: $color-white, $alpha: 0.12);
+  width: 100%;
+}

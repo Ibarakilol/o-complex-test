@@ -1,0 +1,59 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.button {
+  @include reset-button();
+  @include focus();
+  align-items: center;
+  background-color: $background-button;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 24px;
+  transition: background-color $transition-time;
+
+  &:hover {
+    background-color: lighten($color: $background-button, $amount: 15);
+  }
+
+  &:disabled {
+    background-color: rgba($color: $color-black, $alpha: 0.15);
+    cursor: default;
+    pointer-events: none;
+
+    .buttonIcon,
+    .buttonLabel {
+      color: rgba($color: $color-black, $alpha: 0.4);
+    }
+  }
+}
+
+.buttonWithIcon {
+  gap: 12px;
+  grid-auto-flow: column;
+}
+
+.buttonIcon {
+  color: $color-text-button;
+  display: block;
+  height: 20px;
+  position: relative;
+  width: 20px;
+
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.buttonLabel {
+  @include textBody($color-text-button);
+  line-height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

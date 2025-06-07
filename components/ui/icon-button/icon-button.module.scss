@@ -1,0 +1,35 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.iconButton {
+  @include reset-button();
+  @include focus();
+  align-items: center;
+  background-color: $background-button;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  color: $color-text-button;
+  cursor: pointer;
+  display: grid;
+  justify-content: center;
+  padding: 9px;
+  transition: border-color $transition-time;
+
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  &:not(.iconButtonDisabled) {
+    &:hover {
+      border-color: $color-white;
+    }
+  }
+}
+
+.iconButtonDisabled {
+  background-color: rgba($color: $color-black, $alpha: 0.15);
+  color: rgba($color: $color-black, $alpha: 0.4);
+  cursor: default;
+  pointer-events: none;
+}

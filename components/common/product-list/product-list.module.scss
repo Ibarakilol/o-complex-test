@@ -1,0 +1,27 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.productList {
+  display: grid;
+  gap: 48px;
+  justify-content: center;
+}
+
+.productListTitle {
+  @include reset-heading();
+  @include textBody($size: 32px, $weight: $font-weight-bold);
+  text-align: center;
+}
+
+.productListItems {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.productListTrigger {
+  height: 1px;
+  width: 100%;
+}

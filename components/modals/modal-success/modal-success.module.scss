@@ -1,0 +1,14 @@
+@import "@/scss/mixins.scss";
+
+.modalSuccess {
+  box-sizing: border-box;
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  width: 320px;
+}
+
+.modalSuccessTitle {
+  @include textBody($size: 18px);
+  text-align: center;
+}

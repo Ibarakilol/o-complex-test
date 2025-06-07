@@ -1,0 +1,133 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.input {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: $component-input-height;
+  position: relative;
+}
+
+.inputDisabled {
+  .inputField,
+  .inputTextarea {
+    background-color: rgba($color: $color-black, $alpha: 0.15);
+    border-color: rgba($color: $color-border, $alpha: 0.15);
+    color: rgba($color: $color-black, $alpha: 0.4);
+  }
+
+  .inputTextarea {
+    overflow: hidden;
+  }
+
+  &.inputMulti {
+    background-color: rgba($color: $color-black, $alpha: 0.15);
+    border-color: rgba($color: $color-black, $alpha: 0.15);
+
+    .inputTextarea {
+      background-color: transparent;
+      border-color: initial;
+    }
+  }
+}
+
+.inputInvalid {
+  .inputField {
+    border-color: $color-red-light;
+    color: $color-red;
+
+    &:hover:not(:disabled) {
+      border-color: $color-red;
+    }
+
+    &:focus-within:not(:disabled) {
+      border-color: $color-red;
+      box-shadow: 0 0 0 1px $color-red;
+    }
+  }
+
+  &.inputMulti {
+    border-color: $color-red-light;
+
+    &:hover:not(.inputDisabled) {
+      border-color: $color-red;
+    }
+
+    &:focus-within:not(.inputDisabled) {
+      border-color: $color-red;
+      box-shadow: 0 0 0 1px $color-red;
+    }
+  }
+
+  .inputTextarea {
+    color: $color-red;
+  }
+}
+
+.inputMulti {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  grid-template-rows: 1fr;
+  padding: 12px 0;
+  transition: border-color $transition-time ease-in-out;
+
+  &:hover:not(.inputDisabled) {
+    border-color: rgba($color: $color-black, $alpha: 0.3);
+  }
+
+  &:focus-within:not(.inputDisabled) {
+    border-color: $color-border;
+    box-shadow: 0 0 0 1px $color-border;
+  }
+}
+
+.inputField {
+  @include textAccent();
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  box-sizing: border-box;
+  caret-color: rgba($color: $color-black, $alpha: 0.75);
+  margin: 0;
+  outline: none;
+  padding: 0 11px;
+  transition: border-color $transition-time;
+  width: 100%;
+
+  &:hover:not(:disabled) {
+    border-color: rgba($color: $color-black, $alpha: 0.3);
+  }
+
+  &:focus-within:not(:disabled) {
+    border-color: $color-border;
+    box-shadow: 0 0 0 1px $color-border;
+  }
+
+  &::-webkit-contacts-auto-fill-button {
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+  }
+}
+
+.inputTextarea {
+  @include textAccent();
+  background-color: $color-white;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  caret-color: rgba($color: $color-black, $alpha: 0.75);
+  margin: 0;
+  outline: none;
+  padding: 0 11px;
+  resize: none;
+  width: 100%;
+
+  &::-webkit-resizer {
+    display: none;
+  }
+}

@@ -1,0 +1,59 @@
+@import "@/scss/mixins.scss";
+@import "@/scss/variables.scss";
+
+.modalCart {
+  display: grid;
+  gap: 20px;
+  padding: 16px;
+  width: 320px;
+
+  @include tablet() {
+    min-width: 420px;
+    width: unset;
+  }
+}
+
+.modalCartTitle {
+  @include textBody($size: 18px);
+}
+
+.modalCartItems {
+  @include reset-list();
+  display: grid;
+  gap: 4px;
+}
+
+.modalCartItem {
+  @include reset-list-item();
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.modalCartItemTitle {
+  @include textBody();
+}
+
+.modalCartItemTotal {
+  display: grid;
+  gap: 8px;
+  grid-auto-flow: column;
+}
+
+.modalCartItemQuantity {
+  @include textBody($color: rgba($color: $color-text-body, $alpha: 0.7));
+}
+
+.modalCartItemPrice {
+  @include textBody($weight: $font-weight-bold);
+}
+
+.modalCartActions {
+  display: grid;
+  gap: 12px;
+
+  @include tablet() {
+    grid-template-columns: 1fr 115px;
+  }
+}

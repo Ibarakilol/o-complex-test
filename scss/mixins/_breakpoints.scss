@@ -1,0 +1,19 @@
+@import "@/scss/variables.scss";
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
